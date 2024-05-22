@@ -1,10 +1,11 @@
+package Originales;
 // Importación de librerías
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class UDPMulticastServer {
+public class UDPMulticastServer2 {
     public static void sendUDPMessage(String message, String ipAddress, int port) throws IOException {
         // Creación del socket y paquete datagrama con el mensaje
         DatagramSocket socket = new DatagramSocket();

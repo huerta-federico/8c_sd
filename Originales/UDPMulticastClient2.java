@@ -1,3 +1,4 @@
+package Originales;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -5,7 +6,7 @@ import java.net.MulticastSocket;
 
 public class UDPMulticastClient2 implements Runnable {
     public static void main(String[] args) {
-        Thread t = new Thread(new UDPMulticastClient());
+        Thread t = new Thread(new UDPMulticastClient2());
         t.start();
     }
 
