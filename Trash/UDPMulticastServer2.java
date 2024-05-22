@@ -1,4 +1,4 @@
-package Originales;
+package Trash;
 // Importación de librerías
 import java.io.IOException;
 import java.net.DatagramPacket;

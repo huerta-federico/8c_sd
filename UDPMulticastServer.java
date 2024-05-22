@@ -2,7 +2,6 @@
 // Importación de librerías
 import java.io.IOException;
 import java.net.DatagramPacket;
-import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.UnknownHostException;
@@ -10,9 +9,8 @@ import java.util.Scanner;
 
 public class UDPMulticastServer {
     public static void sendUDPMessage(String message, String ipAddress, int port) throws IOException {
-        // Creación del socket y paquete datagrama con el mensaje
+
         MulticastSocket socket = new MulticastSocket(1234);
-        //InetAddress group = InetAddress.getByName("25.4.142.34");
         InetAddress group = null;
 
         try{
@@ -72,8 +70,6 @@ public class UDPMulticastServer {
     static void automaticSend(String host, Integer port) {
         try {
             sendUDPMessage("Primer mensaje multicast", host, port);
-            sendUDPMessage("Segundo mensaje multicast", host, port);
-            sendUDPMessage("Tercer mensaje multicast", host, port);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -11,8 +11,7 @@ public class UDPMulticastClient implements Runnable {
     // Parámetros de conexión
     Integer port = 1234;
     String host = "228.1.1.1";
-    // Interface de red alterna
-    // String networkInterface = "Ethernet 2";
+
     String networkInterface = "LogMeIn Hamachi Virtual Ethernet Adapter";
 
     public static void main(String[] args) {
@@ -30,8 +29,6 @@ public class UDPMulticastClient implements Runnable {
 
         // Unión al grupo multicast
         socket.joinGroup(group, nif);
-        // sentencia original depreciada
-        // socket.joinGroup(group);
 
         // Bucle de espera para recibir mensajes
         boolean isFinalMessage = false;
@@ -55,8 +52,6 @@ public class UDPMulticastClient implements Runnable {
         // Salida del group y cierre del socket
         socket.leaveGroup(group, nif);
         socket.close();
-        // sentencia original depreciada
-        // socket.leaveGroup(group);
     }
 
     public void run() {
