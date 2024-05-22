@@ -12,8 +12,8 @@ public class UDPMulticastClient2 implements Runnable {
 
     public void receiveUDPMessage(String ip, int port) throws IOException {
         byte[] buffer = new byte[1024];
-        MulticastSocket socket = new MulticastSocket(4321);
-        InetAddress group = InetAddress.getByName("230.0.0.0");
+        MulticastSocket socket = new MulticastSocket(1234);
+        InetAddress group = InetAddress.getByName("228.1.1.1");
         socket.joinGroup(group);
         while (true) {
             System.out.println("Esperando mensajes multicast");

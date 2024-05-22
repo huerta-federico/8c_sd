@@ -9,11 +9,11 @@ import java.net.NetworkInterface;
 
 public class UDPMulticastClient implements Runnable {
     // Parámetros de conexión
-    Integer port = 4321;
-    String host = "230.0.0.0";
+    Integer port = 1234;
+    String host = "228.1.1.1";
     // Interface de red alterna
     // String networkInterface = "Ethernet 2";
-    String networkInterface = "Hamachi";
+    String networkInterface = "LogMeIn Hamachi Virtual Ethernet Adapter";
 
     public static void main(String[] args) {
         Thread t = new Thread(new UDPMulticastClient());

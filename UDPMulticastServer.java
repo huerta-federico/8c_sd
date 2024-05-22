@@ -4,13 +4,23 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.MulticastSocket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class UDPMulticastServer {
     public static void sendUDPMessage(String message, String ipAddress, int port) throws IOException {
         // Creación del socket y paquete datagrama con el mensaje
-        DatagramSocket socket = new DatagramSocket();
-        InetAddress group = InetAddress.getByName(ipAddress);
+        MulticastSocket socket = new MulticastSocket(1234);
+        //InetAddress group = InetAddress.getByName("25.4.142.34");
+        InetAddress group = null;
+
+        try{
+            // Dirección de grupo
+                group = InetAddress.getByName("228.1.1.1");
+            }catch(UnknownHostException u){
+            }
+        socket.joinGroup(group);
         byte[] msg = message.getBytes();
         DatagramPacket packet = new DatagramPacket(msg, msg.length, group, port);
 
@@ -23,8 +33,8 @@ public class UDPMulticastServer {
 
     public static void main(String[] args) throws IOException {
         // Parámetros de conexión
-        Integer port = 4321;
-        String host = "230.0.0.0";
+        Integer port = 1234;
+        String host = "228.1.1.1";
 
         // Envío de cuatro paquetes/mensajes multicast
 
